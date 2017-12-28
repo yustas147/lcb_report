@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="rep_stock_inventory_line_tree">
+            <field name="name">rep.stock.inventory.line.tree</field>
+            <field name="model">stock.inventory.line</field>
+            <field name="sequence">20</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="prod_lot_id" string="Unique 16-digit ID"/>
+                </tree>
+            </field>
+        </record>
+        
+        <menuitem id="menu_lcb_root" name="LCB Reporting"  sequence="-2" />
+
+        <menuitem name="For Retailer" parent="menu_lcb_root" id="menu_adjustments_retailer_id" sequence="900" />
+        
+        
+         <record id="act_adjustments_retailer_id" model="ir.actions.act_window">
+            <field name="name">Adjustments Retailer</field>
+            <field name="res_model">stock.inventory.line</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rep_stock_inventory_line_tree"/>
+            <!--<field name="search_view_id" ref="search_sce_inventory_filter"/>-->
+            <!--<field name="domain">[]</field>-->
+            <!--<field name="context">{"search_default_group_by_room" : True}</field>-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create Adjustments report for Retailer
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="act_adjustments_retailer_id" id="menu_rep_stock_inventory" name="Adjustments" parent="menu_adjustments_retailer_id" sequence="10"/>
+
+   </data>
+</openerp>
