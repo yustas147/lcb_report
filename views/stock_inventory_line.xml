@@ -7,7 +7,13 @@
             <field name="sequence">20</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="license_number" />
                     <field name="prod_lot_id" string="Unique 16-digit ID"/>
+                    <field name="adjustment_date" />
+                    <field name="inventory_type" />
+                    <field name="quantity_lost_gained" />
+                    <field name="adjustment_reason" />
+                    <field name="additional_explanation" />
                 </tree>
             </field>
         </record>

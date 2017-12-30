@@ -8,7 +8,7 @@
     'version': '1.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock'],
+    'depends': ['base', 'stock', 'sce'],
 #    'depends': ['sale', 'purchase', 'mrp', 'sce'],
 
     # always loaded
