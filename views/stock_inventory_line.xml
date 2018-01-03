@@ -6,7 +6,7 @@
             <field name="model">stock.inventory.line</field>
             <field name="sequence">20</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree default_order="adjustment_date desc">
                     <field name="license_number" />
                     <field name="prod_lot_id" string="Unique 16-digit ID"/>
                     <field name="adjustment_date" />
@@ -20,11 +20,11 @@
         
         <menuitem id="menu_lcb_root" name="LCB Reporting"  sequence="-2" />
 
-        <menuitem name="For Retailer" parent="menu_lcb_root" id="menu_adjustments_retailer_id" sequence="900" />
-        
+        <!--<menuitem name="For Retailer" parent="menu_lcb_root" id="menu_adjustments_retailer_id" sequence="900" />-->
+        <menuitem name="For Retailer" parent="menu_lcb_root" id="menu_report_retailer_id" sequence="900" />
         
          <record id="act_adjustments_retailer_id" model="ir.actions.act_window">
-            <field name="name">Adjustments Retailer</field>
+            <field name="name">Adjustments</field>
             <field name="res_model">stock.inventory.line</field>
             <!--<field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
@@ -38,7 +38,7 @@
             </field>
         </record>
         
-        <menuitem action="act_adjustments_retailer_id" id="menu_rep_stock_inventory" name="Adjustments" parent="menu_adjustments_retailer_id" sequence="10"/>
+        <menuitem action="act_adjustments_retailer_id" id="menu_rep_stock_inventory" name="Adjustments" parent="menu_report_retailer_id" sequence="10"/>
 
    </data>
 </openerp>

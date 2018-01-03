@@ -17,6 +17,8 @@
         #'security/groups.xml',
        # 'wizard/wiz_view.xml',
         'views/stock_inventory_line.xml',
+        'views/sale_order_line.xml',
+        'views/stock_picking.xml',
         #'views/menu.xml',
     ],
     'installable': True,

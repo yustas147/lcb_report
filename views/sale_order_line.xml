@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="rep_sale_order_line_tree">
+            <field name="name">rep.sale.order.line.tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="sequence">20</field>
+            <field name="arch" type="xml">
+                <tree default_order="sale_date desc">
+                    <field name="license_number" />
+                    <field name="lot_id" string="Unique 16-digit ID"/>
+                    <field name="sale_date" />
+                    <field name="product_uom_qty" string="Quantity sold"/>
+                    <field name="price_subtotal" string="Total price" />
+                    <field name="tax_amount" />
+                    <field name="is_medical" />
+                    <field name="state" />
+                    <!--<field name="state" attrs="{'invisible':True}"/>-->
+                </tree>
+            </field>
+        </record>
+        
+         <record model="ir.ui.view" id="rep_sale_order_line_form">
+            <field name="name">rep.sale.order.line.form</field>
+            <field name="model">sale.order.line</field>
+            <field name="sequence">20</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="license_number" />
+                    <!--<field name="lot_id" string="Unique 16-digit ID"/>-->
+                    <!--<field name="sale_date" />-->
+                    <!--<field name="product_uom_qty" string="Quantity sold"/>-->
+                    <!--<field name="price_subtotal" string="Total price" />-->
+                    <!--<field name="tax_amount" />-->
+                    <!--<field name="is_medical" />-->
+                </form>
+            </field>
+        </record>
+        
+         <record id="act_sale_order_line_id" model="ir.actions.act_window">
+            <field name="name">Sales</field>
+            <field name="res_model">sale.order.line</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rep_sale_order_line_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create Sales Report for Retailer
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="act_sale_order_line_id" id="menu_rep_retail_sales_id" name="Retail Sales" parent="menu_report_retailer_id" sequence="20"/>
+
+   </data>
+</openerp>
