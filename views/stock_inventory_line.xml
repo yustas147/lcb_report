@@ -6,7 +6,7 @@
             <field name="model">stock.inventory.line</field>
             <field name="sequence">20</field>
             <field name="arch" type="xml">
-                <tree default_order="adjustment_date desc">
+                <tree default_order="adjustment_date desc" create="false" edit="false">
                     <field name="license_number" />
                     <field name="prod_lot_id" string="Unique 16-digit ID"/>
                     <field name="adjustment_date" />

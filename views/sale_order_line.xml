@@ -6,7 +6,7 @@
             <field name="model">sale.order.line</field>
             <field name="sequence">20</field>
             <field name="arch" type="xml">
-                <tree default_order="sale_date desc">
+                <tree default_order="sale_date desc" create="false" edit="false">
                     <field name="license_number" />
                     <field name="lot_id" string="Unique 16-digit ID"/>
                     <field name="sale_date" />
@@ -25,7 +25,7 @@
             <field name="model">sale.order.line</field>
             <field name="sequence">20</field>
             <field name="arch" type="xml">
-                <form>
+                <form create="false" edit="false">
                     <field name="license_number" />
                     <!--<field name="lot_id" string="Unique 16-digit ID"/>-->
                     <!--<field name="sale_date" />-->
