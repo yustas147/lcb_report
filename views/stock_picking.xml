@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record model="ir.ui.view" id="rep_stock_pack_operation_tree">
-            <field name="name">rep.stock.pack.operation.tree</field>
-            <field name="model">stock.pack.operation</field>
+        <record model="ir.ui.view" id="rep_stock_pack_operation_lot_tree">
+            <field name="name">rep.stock.pack.operation.lot.tree</field>
+            <field name="model">stock.pack.operation.lot</field>
             <field name="sequence">20</field>
             <field name="arch" type="xml">
                 <tree default_order="date_received desc" create="false" edit="false">
@@ -13,7 +13,8 @@
                     <field name="date_received" />
                     <field name="inventory_type" />
                     <field name="strain" />
-                    <field name="product_qty" string="Quantity"/>
+                    <field name="qty" string="Quantity"/>
+                    <!--<field name="product_qty" string="Quantity"/>-->
                     <!--<field name="qty_done" string="Quantity"/>-->
                     <field name="total_price" string="Total price" />
                     <!--<field name="cost" string="Total price" />-->
@@ -34,18 +35,18 @@
             <!--</field>-->
         <!--</record>-->
         
-         <record id="act_stock_pack_operation_id" model="ir.actions.act_window">
+         <record id="act_stock_pack_operation_lot_id" model="ir.actions.act_window">
             <field name="name">Received Transfers</field>
-            <field name="res_model">stock.pack.operation</field>
+            <field name="res_model">stock.pack.operation.lot</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="rep_stock_pack_operation_tree"/>
+            <field name="view_id" ref="rep_stock_pack_operation_lot_tree"/>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Create Received Transfers Report for Retailer
                 </p>
             </field>
         </record>
         
-        <menuitem action="act_stock_pack_operation_id" id="menu_rep_retail_received_transfers_id" name="Received Transfers" parent="menu_report_retailer_id" sequence="30"/>
+        <menuitem action="act_stock_pack_operation_lot_id" id="menu_rep_retail_received_transfers_id" name="Received Transfers" parent="menu_report_retailer_id" sequence="30"/>
 
    </data>
 </openerp>

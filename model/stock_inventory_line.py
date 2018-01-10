@@ -15,7 +15,8 @@ class stock_inventory_line(models.Model):
             
     @api.multi 
     def _get_license_number(self):
-        company = self.env['res.company'].browse(self.env['res.company']._company_default_get('lcb_report'))
+        company = self.env['res.company']._company_default_get('lcb_report')
+#        company = self.env['res.company'].browse(self.env['res.company']._company_default_get('lcb_report'))
         for inst in self:
             inst.license_number = company.api_license_number
             
