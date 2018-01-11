@@ -18,7 +18,7 @@
             </field>
         </record>
         
-        <menuitem id="menu_lcb_root" name="LCB Reporting"  sequence="7" />
+        <menuitem id="menu_lcb_root" name="LCB Reporting"  sequence="12" />
 
         <!--<menuitem name="For Retailer" parent="menu_lcb_root" id="menu_adjustments_retailer_id" sequence="900" />-->
         <menuitem name="For Retailer" parent="menu_lcb_root" id="menu_report_retailer_id" sequence="900" />
