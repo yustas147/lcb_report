@@ -36,12 +36,21 @@ class pos_order_line(models.Model):
             stock_pack_operation_lots = spol_env.search([('date_received', '=', inst.sale_date)])
             if len(stock_pack_operation_lots):
                 inst.pack_lot_ids = stock_pack_operation_lots.lot_id.name
+    @api.multi
+    def _check_med(self):
+        for inst in self:
+            if inst.tax_amount < 0.00001:
+                inst.is_medical = True
+            else:
+                inst.is_medical = False
+                
     
+        
     license_number = fields.Char(string="License #", compute='_get_license_number')
     tax_amount = fields.Float(string="Total Excise Tax", compute='get_tax_amount', digits=None)
     sale_date = fields.Datetime(string="Sale Date", related='order_id.date_order', store=True)
 #    sale_date = fields.Date(string="Sale Date", related='order_id.date_confirm', store=True)
     
-    is_medical = fields.Boolean(string="Medical Sale?")
+    is_medical = fields.Boolean(string="Medical Sale?", compute='_check_med', store=False)
     pack_lot_ids = fields.Char(string="Pack lot ids", compute='_get_pack_lots')
     
