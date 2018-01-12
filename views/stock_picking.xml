@@ -44,6 +44,9 @@
                 <p class="oe_view_nocontent_create">Create Received Transfers Report for Retailer
                 </p>
             </field>
+            <field name="domain">[
+                ('origin_license', '!=', '')
+            ]</field>
         </record>
         
         <menuitem action="act_stock_pack_operation_lot_id" id="menu_rep_retail_received_transfers_id" name="Received Transfers" parent="menu_report_retailer_id" sequence="30"/>
