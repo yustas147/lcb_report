@@ -14,7 +14,7 @@ class pos_order_line(models.Model):
         for inst in self:
             stock_pack_operation_lots = spol_env.search([('date_received', '=', inst.sale_date)])
             if len(stock_pack_operation_lots):
-                inst.pack_lot_ids = unicode(','.join([x.lot_id.name for x in stock_pack_operation_lots]))
+                inst.pack_lot_ids = unicode(','.join([x.lot_id.name for x in stock_pack_operation_lots if inst.product_id == x.lot_id.product_id]))
             else:
                 inst.pack_lot_ids = inst.product_id.barcode
     
