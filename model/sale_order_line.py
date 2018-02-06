@@ -11,7 +11,8 @@ class sale_order_line(models.Model):
     @api.multi
     def _get_tax_amount(self):
         for inst in self:
-            inst.tax_amount = inst.price_tax - inst.price_subtotal*0.084
+            inst.tax_amount = inst.price_tax - inst.price_subtotal*0.076
+#            inst.tax_amount = inst.price_tax - inst.price_subtotal*0.084
             
     @api.multi
     def _get_pack_lots(self):
@@ -25,7 +26,7 @@ class sale_order_line(models.Model):
     sale_date = fields.Datetime(string="Sale Date", related='order_id.date_order', store=True)
     
 #    license_number = fields.Char(string="License #", compute='_get_license_number')
-#    tax_amount = fields.Float(string="Total Excise Tax", compute='get_tax_amount', digits=None)
+#    tax_amount = fields.Float(string="Total Excise Tax", compute='_get_tax_amount', digits=None)
 #    sale_date = fields.Date(string="Sale Date", related='order_id.date_confirm', store=True)
     
 #    is_medical = fields.Boolean(string="Medical Sale?")

@@ -13,7 +13,8 @@
                     <field name="sale_date" />
                     <!--<field name="product_uom_qty" string="Quantity sold"/>-->
                     <field name="qty" string="Quantity sold"/>
-                    <field name="price_subtotal" string="Total price" />
+                    <field name="product_price_no_tax" string="Total price" />
+                    <!--<field name="price_subtotal" string="Total price" />-->
                     <field name="tax_amount" />
                     <field name="is_medical" />
                     <!--<field name="state" />-->
