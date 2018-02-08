@@ -15,8 +15,8 @@
                     <field name="qty" string="Quantity sold"/>
                     <!--<field name="price_subtotal" string="Total price" />-->
                     <field name="pp" string="Total price" />
-                    <field name="tet" />
-                    <!--<field name="tax_amount" />-->
+                    <!--<field name="tet" />-->
+                    <field name="tax_amount" />
                     <field name="is_medical" />
                     <!--<field name="state" />-->
                     <!--<field name="state" attrs="{'invisible':True}"/>-->
