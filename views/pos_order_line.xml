@@ -8,18 +8,12 @@
             <field name="arch" type="xml">
                 <tree default_order="sale_date desc" create="false" edit="false">
                     <field name="license_number" />
-                    <!--<field name="lot_id" string="Unique 16-digit ID"/>-->
                     <field name="pack_lot_ids" string="Unique 16-digit ID"/>
                     <field name="sale_date" />
-                    <!--<field name="product_uom_qty" string="Quantity sold"/>-->
                     <field name="qty" string="Quantity sold"/>
-                    <!--<field name="price_subtotal" string="Total price" />-->
                     <field name="pp" string="Total price" />
-                    <!--<field name="tet" />-->
                     <field name="tax_amount" />
                     <field name="is_medical" />
-                    <!--<field name="state" />-->
-                    <!--<field name="state" attrs="{'invisible':True}"/>-->
                 </tree>
             </field>
         </record>
@@ -31,12 +25,6 @@
             <field name="arch" type="xml">
                 <form create="false" edit="false">
                     <field name="license_number" />
-                    <!--<field name="lot_id" string="Unique 16-digit ID"/>-->
-                    <!--<field name="sale_date" />-->
-                    <!--<field name="product_uom_qty" string="Quantity sold"/>-->
-                    <!--<field name="price_subtotal" string="Total price" />-->
-                    <!--<field name="tax_amount" />-->
-                    <!--<field name="is_medical" />-->
                 </form>
             </field>
         </record>
@@ -44,7 +32,6 @@
          <record id="act_pos_order_line_id" model="ir.actions.act_window">
             <field name="name">Pos Sales</field>
             <field name="res_model">pos.order.line</field>
-            <!--<field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="rep_pos_order_line_tree"/>
             <field name="help" type="html">
